@@ -1,7 +1,6 @@
+
 module.exports = {
   siteMetadata: {
-    title: `Welcome to Escort Service agency`,
-    description: `Book Mumbai Escorts for independent Mumbai Call Girls. Spend A Night and Get Full Satisfaction and Sexual pleasure With High Profile Call Girls in Mumbai.`,
     author: `@Qvishal`,
     siteUrl: `https://www.bookmumbaiescorts.com`,
   },
@@ -20,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `bookmumbaiescorts`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
@@ -51,6 +50,32 @@ module.exports = {
         policy: [{ userAgent: '*', Disallow: '' }]
         } 
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.bookmumbaiescorts.com`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-4V2GCCRFSK", // Google Analytics / GA
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          send_page_view: true,
+        },        
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+        },
+      },
+    },        
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
